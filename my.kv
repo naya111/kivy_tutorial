@@ -21,7 +21,6 @@ WindowManager:
 
 
 <NayaWindow>:
-    id: naya_widget
     name: "naya"
     BoxLayout:
         orientation: "vertical"
@@ -29,22 +28,24 @@ WindowManager:
         padding: 50
         spacing: 20
 
-        Label:
-            text: "Welcome to my screen"
-            font_size: 25
-
         Image:
-            id: naya_image
-            source: ""
+            id: empty
+            source: '/Users/zhenaya/github/kivy_tutorial/sky.jpg'
+            allow_stretch: False
+            keep_ratio: True
 
+        GridLayout:
+            cols: 1
 
-        FileChooserIconView:
-            id: filechooser
-            on_selection: naya_widget.selected(filechooser.selection)
-
+            Button:
+                text: "Click here for a surprise"
+                font_size: 50
+                on_release:
+                    empty.source = '/Users/zhenaya/github/kivy_tutorial/beach.jpg'
+                on_press:
+                    empty.source = '/Users/zhenaya/github/kivy_tutorial/sky.jpg'
         Button:
-            text: "Main Menu"
-            font_size: 32
+            text: "Go back"
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "right"
