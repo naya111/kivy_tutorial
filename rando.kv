@@ -1,0 +1,63 @@
+
+WindowManager:
+    StartWindow:
+    GameWindow:
+
+<StartWindow>
+    name: "start"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Meals for Monsters"
+            font_size: 52
+        Button:
+            text: "Click here to start"
+            font_size: 48
+            size_hint_x: 0.5
+            on_release:
+                app.root.current = "game"
+                root.manager.transition.direction = "left"
+
+<GameWindow>
+    name: "game"
+    GridLayout:
+        cols: 1
+        rows: 4
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: "Choose which one is your favorite food"
+
+        GridLayout:
+            cols: 2
+            rows: 2
+
+            Button:
+                id: button1
+                text: "1"
+
+            Button:
+                id: button2
+                text: "2"
+
+            Button:
+                id: button3
+                text: "3"
+
+            Button:
+                id: button4
+                text: "4"
+
+        Button:
+            text: "Next Round"
+            id: nextround
+            on_release:
+                app.root.current = root.NextRound()
+        Button:
+            text: "Finish"
+            id: goback
+            on_release:
+                app.root.current = "start"
+                root.manager.transition.direction = "right"

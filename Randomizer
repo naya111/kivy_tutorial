@@ -1,0 +1,42 @@
+from kivy.app import App
+from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.image import Image, AsyncImage
+from kivy.uix.button import Button
+
+import random
+food = ['Oysters', 'Ravioli', 'Pizza', 'Hamburger', 'Salad', 'Tuna', 'Oyakodon', 'Teriyaki', 'Sushi', 'Mussels', 'Shrimp Cocktail', 'Vanilla Ice Cream']
+
+class StartWindow(Screen):
+    pass
+
+class GameWindow(Screen):
+    def on_enter(self, *args):
+        self.ids.button1.text = random.choice(food)
+        self.ids.button2.text = random.choice(food)
+        self.ids.button3.text = random.choice(food)
+        self.ids.button4.text = random.choice(food)
+
+    def NextRound(self):
+        self.ids.button1.text = random.choice(food)
+        self.ids.button2.text = random.choice(food)
+        self.ids.button3.text = random.choice(food)
+        self.ids.button4.text = random.choice(food)
+
+    pass
+
+class WindowManager (ScreenManager):
+    pass
+
+kv = Builder.load_file("rando.kv")
+
+class MyRandomizer(App):
+    def build(self):
+        return kv
+
+if __name__ == "__main__":
+    MyRandomizer().run()
+
+
+#round1 = random.sample(food, k=3)
+#print(round1)
