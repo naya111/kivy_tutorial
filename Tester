@@ -1,0 +1,67 @@
+import random
+# Round_A = {
+# '593': 'Cashews',
+# '4261': 'Yogurt with apple, grapes and coffee',
+# '6877': 'Grapes, pear and almonds',
+# '3919': 'Plain yogurt with egg, cantaloupe melon, slice of bread and coffee'
+# }
+
+Round_A = ['593', '4261', '6877', '3919']
+Round_B = {
+'6055': 'Red snapper with cucumber, broccoli, carrots, cauliflower, tomato, onion and pepper',
+'5040': 'Rice, chicken with sauce, white beans, and salad with tomato',
+'7372': 'Spaghetti with chicken',
+'5764': 'Cheeseburger with bacon, lettuce, fried onion and pickle and french fries'
+}
+Round_C = {
+'912':	'Tuna salad on arugula with carrots',
+'934': 'Spinach salad, chicken, egg whites, beans, sunflower seeds, carrots and balsamic vinegar',
+'4343': 'Ham and egg sandwich with orange, grapes, coffee and milk',
+'4305': 'Bread with egg, orange, blueberries, green juice and coffee'
+}
+Round_D = {
+'6347': 'Seasoned Chicken breast and Salad with tomato and cheese',
+'6669': 'Stir fry vegetables with soy sauce',
+'864': 'Pork chops with green beans and sweet potato',
+'4975': 'Rice, fat-free beef, and steamed broccoli'
+}
+Round_E = {
+'7457': 'Salmon with broccoli, tomatoes, and french fries',
+'6249': 'Shrimp and chicken with broccoli and rice pilaf',
+'7989': 'Spaghetti with meatballs, bok choy, and chicken',
+'7977': 'Personal size pizza with pepperoni'
+}
+
+all_rounds = [Round_A, Round_B, Round_C, Round_D, Round_E]
+#rounds_finished = random.shuffle(all_rounds)
+rounds_shuffled = all_rounds.copy()
+random.shuffle(rounds_shuffled)
+
+def new_round(self):
+        global current_round
+        current_round += 1
+
+#rounds_shuffled[current_round]
+current_round_copy = all_rounds[0].copy()
+random.shuffle(current_round_copy)
+
+print (current_round_copy)
+#rounds_finished.insert(1, random.choice(all_rounds))
+
+#while len(all_rounds) >0:
+#for round in all_rounds:
+    #rounds_finished.insert(1, random.choice(all_rounds))
+    #if round in rounds_finished:
+        #all_rounds.remove(round)
+
+print (rounds_shuffled)
+
+
+#round_generator = random.sample(all_rounds, 1)
+
+
+#rounds_finished.append(round_generator)
+
+#second_round =
+
+print (all_rounds)
